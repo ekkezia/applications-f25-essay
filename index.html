@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work With Me Essay</title>
+    <style>
+      /* Minimal CSS for centering the initial view */
+      body {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Container for the initial, centered content */
+      #initial-center-container {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        max-width: 800px;
+        text-align: center;
+        padding-top: 50px;
+      }
+
+      /* Main document area for content */
+      #content-container {
+        width: 90%;
+        max-width: 800px;
+        margin-top: 20px;
+        padding-bottom: 50px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        line-height: 1.6;
+      }
+
+      /* Title and buttons styling */
+      h1 {
+        color: #1a202c;
+        font-size: 2.2em;
+        margin-bottom: 0.5em;
+      }
+
+      #controls-container button {
+        padding: 12px 24px;
+        margin: 10px;
+        font-size: 1em;
+        cursor: pointer;
+        border: none;
+        border-radius: 9999px; /* Rounded pill shape */
+        font-weight: 600;
+        transition: all 0.2s ease-in-out;
+      }
+
+      #controls-container button:first-of-type {
+        background-color: #4f46e5; /* Indigo */
+        color: white;
+        box-shadow: 0 4px 6px rgba(79, 70, 229, 0.3);
+      }
+      #controls-container button:first-of-type:hover {
+        background-color: #4338ca;
+        transform: translateY(-1px);
+      }
+
+      #controls-container button:last-of-type {
+        background-color: #e5e7eb; /* Light Gray */
+        color: #374151;
+      }
+      #controls-container button:last-of-type:hover {
+        background-color: #d1d5db;
+      }
+
+      /* Styling for the content area (when visible) */
+      #content-container h3 {
+        color: #374151;
+        border-bottom: 2px solid #eff6ff;
+        padding-bottom: 10px;
+        margin-top: 30px;
+        font-size: 1.5em;
+      }
+      #content-container h3:first-of-type {
+        margin-top: 0;
+      }
+
+      #content-container p {
+        margin-bottom: 1.25em;
+      }
+
+      /* Subheading for comparison within Section 1 */
+      #content-container h4 {
+        font-size: 1.25em;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        color: #4b5563;
+      }
+
+      /* Table styling */
+      #content-container table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 0.9em;
+      }
+
+      #content-container th,
+      #content-container td {
+        border: 1px solid #e5e7eb;
+        padding: 12px;
+        text-align: left;
+      }
+
+      #content-container th {
+        background-color: #f9fafb;
+        font-weight: 600;
+        color: #4b5563;
+      }
+
+      /* Next Section Scroll Trigger Styling */
+      #next-section-trigger {
+        margin: 50px 0 20px 0;
+        padding: 20px;
+        text-align: center;
+        color: #6b7280;
+        border: 2px dashed #d1d5db;
+        border-radius: 8px;
+        cursor: default; /* Make it look non-interactive until triggered */
+      }
+      #next-section-trigger.opening {
+        background-color: #f0fdf4; /* Light green flash */
+        border-color: #a7f3d0;
+        color: #065f46;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Container for the initial, centered view (Title and primary buttons) -->
+    <div id="initial-center-container">
+      <h1 id="main-title">
+        Work With Me: How does self-documentation and/or livestreaming (on
+        social media) affect the duration of one’s focus on a digital-based
+        task?
+      </h1>
+      <div id="controls-container">
+        <!-- Initial buttons will be placed here by initialize() -->
+      </div>
+      <p
+        style="
+          text-align: center;
+          font-size: 0.9em;
+          color: #6b7280;
+          margin-top: 15px;
+        "
+      >
+        Elizabeth Kezia Widjaja | Keywords: panopticon, surveillance,
+        livestreaming, focus, discipline, performativity, attention, digital
+        labor
+      </p>
+    </div>
+
+    <!-- Content Rendering Container - Hidden initially -->
+    <div id="content-container" style="display: none">
+      <!-- Content will be rendered here after mode selection -->
+    </div>
+
+    <script>
+      // --- 1. Content Data Structure and Order (Refactored to merge sections) ---
+      const documentContent = {
+        intro: {
+          title: 'Introduction',
+          html: `<p>It was late summer, the time when schoolwork begins to accelerate and midterms loom on the horizon. Savouring what little warmth left for the season, I travelled to the beach, not alone but accompanied with my Arduino and my weekly physical computation lab. On my left shoulder hung a laptop bag; on my right, a towel. If multitasking is a person, I will definitely be a good candidate. I orchestrated a brilliant plan: finish my homework against the backdrop of waves, kill two fish with one bait, and in an even more inspired twist — document the entire moment for the class blog.</p><p>As I plugged the red cable into the 5V pin, a gust of wind blew sand across the breadboard, meddling with the livelihood of my circuit. My recording phone keeps the evidence of my awareness of the grains slipping in between the wires. I couldn’t tell whether I was genuinely focusing on the assignment or simply performing the appearance of focus for the documentation. Either way, I kept going. For the entire duration of the recording, I remained faithful to the task, or at least, I looked like I was.</p><p>While I need to disassemble the Arduino afterwards, the proof of the assignment is preserved in the self-documentation video. This video is then uploaded to Youtube so I could share it with my professor and classmates. As it ascends into the realm of social media, the documentation evolves from a piece of work evidence into a subtle form of discipline. The act of being recorded shaped how I behaved; the potential of being watched shaped how I focused. This experience is not unique to me; it reflects a broader cultural shift in how people use digital platforms to focus and perform their attention.</p><p>Beginning in the mid-2000s, the rise of vlogging and online video platforms made self-documentation a widespread practice [1]. As these technologies matured, this culture of recording daily life gradually expanded into productivity-oriented formats—such as “Study With Me” and “Work With Me” where long stretches of concentration are reframed as motivating, shareable content [2]. This leads me to my central question: How does self-documentation on social media affect the duration of one’s focus on a digital-based task?</p>`,
+        },
+        'section-1': {
+          title: 'Section 1: Historical and Technical Overview and Comparison',
+          html: `<p>A tempting way to abstract the phenomenon of self-recording is through the framework of the Panopticon. Originally designed by Jeremy Bentham, the Panopticon is an annular structure with a central tower surrounded by cells, arranged so that prisoners can be observed without ever knowing when or whether they are being watched. As Foucault famously argues in <em>Discipline and Punish</em> (1975), the Panopticon becomes a metaphor for modern disciplinary power: a model in which surveillance becomes internalized. Individuals monitor and regulate their own behavior because the possibility of being watched is constant, even when no actual guard is present. The effect is not merely external control, but the production of self-discipline and self-governance: “a state of conscious and permanent visibility” (Foucault, p. 201).</p><p>“Is it surprising that prisons resemble factories, schools, barracks, hospitals, which all resemble prisons?”, a quote from Foucault (p. 218). prefaces my take on institutions, such as the school and the office, have reflected the panopticon values. In some educational programs like ITP (Interactive Telecommunications Program), students are encouraged, or even required, to maintain public blogs, upload project documentation sites, process journals, and weekly updates. The intention may be pedagogical, fostering reflection and transparency, but the effect aligns with Panoptic logic: students are aware that their in-progress work is public, not just for professors but accessible to peers, potential employers, and unknown online viewers. The “guards” are no longer a group of internal members (i.e, professors, classmates), but also the broader public (i.e, future employers, audience) have the right to access these open platforms ( <a href="https://muse.jhu.edu/article/252435/pdf" target="_blank">https://muse.jhu.edu/article/252435/pdf</a>).</p><p>Self-documentation videos are one of the most public exposing mediums that exist in those blogs. The rise of self-documentation culture —posting a timelapse of one doing works-in-progress or study sessions—can be seen as a continuation of this institutional history. Where the traditional Panopticon relied on architecture, contemporary digital environments rely on platforms. In school settings, self-documentations create an expectation of process visibility. On the Internet itself, this logic evolves into productivity genres such as “Study With Me” or “Work With Me,” where users voluntarily place themselves under the digital gaze.</p>
+                
+                <h4>Comparison of the self-documentations at the Panoptic school vs “Study With Me” / “Work With Me” culture on the Internet</h4>
+                <table><thead><tr><th></th><th>School</th><th>“Study With Me” / “Work With Me” self-documentations</th></tr></thead>
+                        <tbody><tr><td><strong>Set duration</strong></td><td>3 months to more than 4 years. In general, it takes longer time compared to online self-documentations.</td><td>45 minutes to 24 hours, with an average duration of 5h 45m [2]. It takes less time but usually results in a hyped focus within that time span, compared to school that has longer breaks.</td></tr>
+                            <tr><td><strong>Audience</strong></td><td>Audience is prioritized to internal members such as professors and classmates, who are usually expected to respond with feedback.</td><td>The self-documentation on social media often allows any public to drop in and out. Audiences are also able to comment, like, share the stream on platforms such as Youtube, Instagram, and even giving gifts on Tiktok.</td></tr>
+                            <tr><td><strong>Location</strong></td><td>A classroom, a study room, a library. The location may be shared with other people in the space.</td><td>A deliberately setup environment, usually involving the work desk and a computer. The location tends to be solitary.</td></tr>
+                            <tr><td><strong>Task presentation</strong></td><td>The work in progress may or may not always be documented continuously. Students may pick a set point of time that best represents their progress checkpoints. Background noise may differ due to uncontrolled locations.</td><td>The work in progress is streamed and tends to be followed with a clear and eyecatchy title such as “STUDY FOR EXAM WITH ME FOR 2.5 HOURS”. The title includes the task and the duration. A constant background sound (i.e, ASMR, noise) is commonly present.</td></tr>
+                        </tbody>
+                    </table>
+                    <p>The contemporary “Study With Me” genre emerged from earlier practices of online self-documentation. During the mid-2000s, vlogging normalized the act of recording everyday routines and work processes as shareable content (Cheng et al., 2010). Around 2018 in South Korea, this evolved into <em>gongbang</em> (공방) or “study broadcasts” where students streamed themselves studying for long, silent stretches, creating a virtual form of social presence and accountability ( <a href="https://observatory.tec.mx/edu-news/gongbang-study-with-me/" target="_blank">https://observatory.tec.mx/edu-news/gongbang-study-with-me/</a> ). The format spread globally and was further amplified during the COVID-19 pandemic, when remote learners sought virtual study companionship [2]. YouTube reported a 54% increase in “study with me” video views in the U.S. from 2019 to 2020 (Southern, 2020 [5]). Today, “Study With Me” has become a widespread social media practice that turns long durations of concentration into publicly performed labor. Such cases can arguably be adapted to the realm of work as well, resulting in “Work With Me” culture, which this essay attempts to have a take on.</p>`,
+        },
+        'section-2': {
+          title: 'Section 2: Impact on Society/Culture',
+          html: `<p>While some vloggers originally used Study-With-Me (SWM)–style documentation as a way to pressure themselves into staying focused or to present proof of their study habits to others (Observatory TEC, 2021 [6]), research shows that SWM videos also have measurable effects on audiences. Lee, Chang, et al. (2021) found that participants expected the combination of staying focused and studying for long durations to feel more efficient and more satisfying (p. 5). In this sense, SWM functions as a quasi-cognitive “hack”: a self-conscious method of structuring attention through visibility, where both the streamer and viewers rely on the mediated presence of others to regulate their own focus.</p><p>The fact that most of the SWM live streamers attract more than 1,000 viewers at a time [2] suggests that this format successfully showcases the appeal of focus to a large audience. As a result, it forms a community of motivated individuals, whose bond enforces the surveillance effect as viewers rely on the streamer to maintain concentration, and the streamer, in turn, feels compelled to perform sustained focus under the audience’s gaze.</p><p>For streamers, SWM can be a double-edged form of pressure where the presence of an audience induces accountability, elevating the urgency to remain visibly focused and reducing the likelihood of distraction. At the same time, the awareness of being monitored can create anxiety, performance tension, or a sense of obligation similar to those of panoptic surveillance structures (Wohn et al., 2019).</p><p>For the audience, there are five main factors could benefit them while they watched SWM videos: (1) to get motivated by a creator studying in video, (2) to gain the sense of studying together, (3) to control their studying ambience easily, (4) to reduce the cost of creating a study-friendly ambience, and (5) to mitigate distraction from smartphone [2]. Further, Kim & Ryoo (2023) found that most viewers consume SWM content with a goal-oriented mindset toward learning, meaning that the audience is already predisposed toward focus but seeks external support to sustain it.</p><p>There are two major stylistic branches of SWM videos. The first—and most closely associated with the genre—is the straightforward, no-talking format that aligns with the principles of slow media: long, uninterrupted footage of the creator studying or working in real time. More recently, however, creators have adapted the format into short-form content. These videos often include time-lapses, timestamps, and high-BPM soundtracks, creating a heightened sense of urgency for viewers. This accelerated style has inspired trends such as the “Kay Chung Method,” named after a dental student whose all-night study sessions, punctuated by frequent location changes whenever she hits a focus limit, have been widely imitated across platforms.</p><p>The shift toward short-form SWM content also explains its prevalence on platforms like Instagram Live and TikTok, which reward rapid, high-engagement interactions. Features such as comments, likes, and virtual gifting operate simultaneously as encouragement and as public scrutiny ( <a href="https://researchleap.com/wp-content/uploads/2022/03/01_Casual-Learning-within-TikTok.pdf" target="_blank">https://researchleap.com/wp-content/uploads/2022/03/01_Casual-Learning-within-TikTok.pdf</a> ). Whether interpreted positively as support or negatively as judgment, these feedback mechanisms heighten the streamer’s impulse to remain visibly focused, reinforcing the performance-driven nature of the SWM environment.</p><p>Despite the lack of instructional or conversational elements in SWM content, the platforms on which they are streamed allow a high level of interactivity. This interactivity can expose streamers to distractions, since they have the option of responding to comments, monitoring viewer counts, or managing technical aspects of the stream. Even passive awareness of these incoming stimuli can fragment attention and shorten the period of uninterrupted focus. In some cases, performers may appear to maintain their concentration for long durations, but their cognitive resources may be partially diverted—raising the question of whether the observed duration of focus reflects genuine sustained attention or merely the suppression of visible distractions.</p><p>Another negative consequence is the stress and pressure created by being visibly on display. This performance anxiety may lead streamers to force themselves to remain on-task for longer periods than they naturally would, artificially inflating the duration of visible focus. However, it may also cause premature fatigue, resulting in shorter overall work sessions. In both directions, stress alters the length of sustained attention, rather than simply the quality of the work.</p><p>Taking both the positive and negative impacts, these dynamics point us to the central question of whether self-documentation and/or livestreaming (on social media) affect the duration of one’s focus on a digital-based task. The potential role of performativity, as discussed above, will also be considered as a contextual factor in interpreting the findings.</p>`,
+        },
+        'section-3': {
+          title: 'Section 3: Experiments',
+          html: `<p>In order to test how self-documentation (via livestreaming) influences sustained focus, I recruited two groups with two members in each. One group completes a digital task while being livestreamed, and the other works on the same task under observation by me (the researcher), but without a live audience. To examine how interface structure and opportunity for distraction mediate this effect, participants in each group will perform one of two task types: an app-based task, which offers a relatively constrained, focused environment, and a browser-based task, which inherently allows more gateways for procrastination (e.g., multiple browser tabs, web searches, social media). Because browser-based tasks afford more potential for context-switching and external interruptions, they may exacerbate attentional fragmentation ( <a href="https://www.physicianleaders.org/articles/how-much-time-and-energy-do-we-waste-toggling-between-applications?utm_source=chatgpt.com" target="_blank">https://www.physicianleaders.org/articles/how-much-time-and-energy-do-we-waste-toggling-between-applications?utm_source=chatgpt.com</a> ).</p><p>By crossing livestream conditions (live vs. researcher-only) with task type (app vs. browser), this design enables us to assess how being watched and the affordances of the working environment simultaneously influence the duration of focus. I intentionally recruited individuals who are not professional streamers so that I can better observe how ordinary users react to the pressure of “being on” without preexisting performance habits.</p><h3>Table 2: Background of interview participants.</h3>
+                    <table><thead><tr><th></th><th>Livestream</th><th>Platform</th><th>Background</th><th>Have livestreamed before</th></tr></thead>
+                        <tbody><tr><td>P1</td><td>Yes</td><td>Tiktok</td><td>Student, female, 19 years old.</td><td>yes</td></tr><tr><td>P2</td><td>Yes</td><td>Tiktok</td><td>Student, female, 21 years old.</td><td>No</td></tr>
+                            <tr><td>P3</td><td>No</td><td>N/A</td><td>Photographer, male, 26 years old.</td><td>N/A</td></tr><tr><td>P4</td><td>No</td><td>N/A</td><td>Project manager, student, female, 2 years old.</td><td>N/A</td></tr>
+                        </tbody>
+                    </table><p>Participants are asked to gauge their capability and level of focus to set the baseline of comparison in this experiment.</p><h3>Table 3: Participants’ qualitative survey result for baseline capability and focus</h3>
+                    <table><thead><tr><th></th><th>Task</th><th>Application Used</th><th>Baseline Capability*</th><th>Baseline Focus**</th><th>Self assessment on unbreakable focus time***</th></tr></thead>
+                        <tbody><tr><td>P1</td><td>Editing photograph</td><td>Photoshop</td><td>5/5</td><td>4/5</td><td>30-60 minutes</td></tr>
+                            <tr><td>P2</td><td>Writing thesis</td><td>Browser (Google Docs)</td><td>3/5</td><td>2/5</td><td>1-5 minutes</td></tr>
+                            <tr><td>P3</td><td>Curating photographs & layouting</td><td>Photoshop</td><td>3/5</td><td>3/5</td><td>30-60 minutes</td></tr>
+                            <tr><td>P4</td><td>Research for a school assignment</td><td>Browser, Notion</td><td>4/5</td><td>4/5</td><td>More than an hour</td></tr>
+                        </tbody>
+                    </table><p>*1 is least capable or new to the task, 5 is very capable or proficient<br>**1 is very easily distracted, 5 is constantly focused all the time<br>***How long can participants stay focused on a single task before switching to tasks or applications that are irrelevant to the current task?</p><p>In general, all participants have familiarity with the tasks. Their assessment on their focus level ranges at the average (3 out of 5) to good (4 out of 5) level, with one participant having a poor focus time (2). Based on their self assessment on undisrupted focus time, we can define the good level (4) to an hour or more, the average (3 out of 5) to about 30 to 60 minutes, and the poor (2 out of 5) level is as low as 1 to 5 minutes.</p><p>Defining this baseline is important because it provides a reference point against which changes in focus duration during the livestreamed and non-livestreamed sessions can be measured. Without an understanding of participants’ typical attention spans, it would be difficult to determine whether any observed increase or decrease in focus is attributable to the SWM-style conditions or simply reflects their pre-existing tendencies.</p><p>At this point, we are now ready to conduct the experiment. I began with the livestreaming group to set up their livestreaming device and platform to how they prefer it and screen record their screen for data collection regarding tab or window change.</p><h3>Table 4: Breakdown of focus for livestreaming group ( P1 ).</h3>
+                    <ul><li><strong>00:00:</strong> P1 opened Adobe Photoshop application.</li><li><strong>14:57:</strong> P1 paused on the task. P1 greeted their livestreaming guests and explained that she was doing this work-focus experiment for me. This was the only time they actively interacted with the public in the livestream. P1 returned to task.</li><li><strong>60:00 / Summary:</strong> From a computer screen perspective, P1 remained focused for the whole observation period, with occasional change of windows to folder finder and google drive, but this was still related to the photo editing task. However, P1 changed their tab to Whatsapp once to reply to their relatives. From a livestream perspective, P1 occasionally checked the comments on the livestream by slightly looking at their phone, but did not engage (reply or greet) them. P1 maintained their posture (back straight, legs down) uniformly throughout the observation period. P1 also puts on music and occasionally sings with the music.</li><li><strong>Summary of applications and/or tabs opened counts:</strong> Adobe Photoshop, Whatsapp, Google Drive</li><li><strong>Average duration of uninterrupted focus:</strong> 43 minutes.</li><li><strong>Average duration of distracted period:</strong> 2 minutes.</li><li><strong>Average times of being distracted:</strong> 1 time.</li><li><strong>Notable statements from the interview:</strong> P1 reported that their primary source of distraction stemmed from the awareness of being watched by an audience. They expressed discomfort with others seeing the messiness of their work-in-progress and felt pressure to present a cleaner, more organized workflow (e.g., using tidy layouts and properly labeled elements). Although their overall ability to focus did not significantly change with audience presence, the livestream setting motivated them to improve the <em>quality</em> and presentation of their work. P1 noted that this relative ease of maintaining focus may be due to their personal interest in the task; if the task were more monotonous or less engaging, they believed they would be more vulnerable to distraction. They also stated that they tend to work faster when livestreaming to avoid being perceived as slow, though this did not necessarily translate into sustained focus throughout the session. Additionally, P1 emphasized a preference for a consistent and controlled workspace—such as a plain background, absence of other people, and minimal noise aside from selected music—which they felt supports their concentration.</li></ul><h3>Table 5: Breakdown of focus for livestreaming group ( P2 ).</h3>
+                    <ul><li><strong>00:00:</strong> P2 opened Google Docs.</li><li><strong>07:25:</strong> P2 changed the tab to Google Search for task research purposes and opened more tabs that are related to reference research materials.</li><li><strong>11:30:</strong> P2 paused on the task.</li><li><strong>12:20:</strong> P2 returned to reading the research paper.</li><li><strong>12:48:</strong> P2 opened the Tiktok tab briefly, most probably out of accident as it was only a split second. P2 paused on the task.</li><li><strong>14:21:</strong> P2 returned to their research paper on Google Docs.</li><li><strong>17:57:</strong> P2 changed the tab to Google Search for task research purposes and opened more tabs that are related to reference research materials.</li><li><strong>19:00:</strong> P2 paused on the task.</li><li><strong>20:30:</strong> P2 returned to the task.</li><li><strong>21:00:</strong> P2 paused on the task.</li><li><strong>22:20:</strong> P2 returned to the task.</li><li><strong>24:00:</strong> P2 paused on the task.</li><li><strong>29:40:</strong> P2 returned to the task.</li><li><strong>30:00:</strong> P2 paused on the task.</li><li><strong>32:00:</strong> P2 returned to the task.</li><li><strong>45:00:</strong> P2 changed the tab to Google Search for task research purposes and opened more tabs that are related to reference research materials.</li><li><strong>54:00:</strong> P2 paused on the task.</li><li><strong>55:00:</strong> P2 returned to the task.</li><li><strong>60:00 / Summary:</strong> From a computer screen perspective, P2 remained focused on the task for the whole observation period, except for occasional change of tab to Tiktok on 12:00 and to a Google Maps search at 54:00. From a livestream perspective, P2 occasionally checked the comments on the livestream by slightly looking at their phone, but did not engage (reply or greet) them. P1’s posture (back straight and legs down) constantly changed throughout the duration of observation. P2 put on music and sometimes hummed to it. P2 occasionally smoked with their vape device.</li><li><strong>Summary of applications and/or tabs opened counts:</strong> Google Docs, various research paper, Google Search, Google Maps, Tiktok, and Whatsapp.</li><li><strong>Average duration of uninterrupted focus:</strong> This value is missing in the original text, but based on the log, it is approximately 7 minutes.</li><li><strong>Average duration of distracted period:</strong> 6 minutes.</li><li><strong>Average times of being distracted:</strong> 6 times.</li><li><strong>Notable statements from the interview:</strong> P2 reported that their main distractions came from mobile notifications, especially WhatsApp, and from repeatedly checking their appearance and camera angle on the livestream. They noted a preference for working in environments where others are also working, such as libraries, as the shared atmosphere helps maintain focus. P2 stated that the awareness of being watched noticeably changed their behavior. During the livestream, they avoided switching tabs and made an effort to read the entire research paper, whereas in a non-livestream setting they believed they would be more prone to distractions like YouTube. Overall, P2 concluded that the livestream increased their focus due to the social pressure created by an observing audience.</li></ul><h3>Table 6: Breakdown of focus for non-livestreamed group ( P3 ).</h3>
+                    <ul><li><strong>00:00:</strong> P3 opened Finder</li><li><strong>28:00:</strong> P3 occasionally went back and forth Whatsapp and email to check on client brief. P3 also google searched layout size, pasted the brief to Note and opened Google Drive for typography reference.</li><li><strong>36:00:</strong> P3 opened Instagram to check poster briefs, but admitted to being distracted a little by other creator’s post.</li><li><strong>37:00:</strong> P3 returned to task. P3 now moved on to Adobe Photoshop.</li><li><strong>60:00 / Summary:</strong> From a computer screen perspective, P3 remained focused for the whole observation period, with occasional change of windows to Whatsapp (to check on messages from work stakeholder), folder finder and google drive, but this was still related to the photo editing task. P3 opened Instagram with the reasons for checking poster briefs. They admitted to get distracted a little by another creator’s post but they didn’t intend to open Instagram to see that particular distracting post. P3 maintained their posture (back straight, legs down) uniformly throughout the observation period. P3 put on music and often sings out loud with the music.</li><li><strong>Summary of applications and/or tabs opened counts:</strong> Finder, Whatsapp, email, Instagram, Notes, Adobe Photoshop</li><li><strong>Average duration of uninterrupted focus:</strong> 36 minutes.</li><li><strong>Average duration of distracted period:</strong> 1 minute.</li><li><strong>Average times of being distracted:</strong> 1 time.</li><li><strong>Notable statements from the interview:</strong> P3 reported no significant distractions for this task, noting that their strong personal interest made the activity enjoyable and absorbing, which reduced the likelihood of losing focus. Their main potential distraction would be the presence of someone they know, as they tend to engage in conversation. P3 expressed a preference for a quiet, non-distracting workspace—such as a plain wall and minimal noise aside from selected music—but felt largely indifferent to the physical setup as long as the environment remained quiet and anonymous. Regarding a livestreamed context, P3 speculated that their tendency to be responsive to others might lead them to spend more time replying to audience interactions instead of working. However, they noted that if livestream notifications were not directly visible, the impact on their focus would likely be minimal.</li></ul><h3>Table 7: Breakdown of focus for non-livestreamed group ( P4 ).</h3>
+                    <ul><li><strong>00:00:</strong> P4 opened a reference website and played test the site.</li><li><strong>06:00:</strong> P4 opened Notion, a class syllabus and another reference document.</li><li><strong>09:33:</strong> P4 opened Spotify to turn on music. P4 went out to borrow a headphone.</li><li><strong>15:30:</strong> P4 returned to desk but opened an office hour booking site.</li><li><strong>16:33:</strong> P4 returned to task.</li><li><strong>60:00 / Summary:</strong> From a computer screen perspective, P3 remained focused for the whole observation period, with occasional change of windows to Whatsapp (to check on messages from work stakeholder), folder finder and google drive, but this was still related to the photo editing task. From a livestream perspective, P4 occasionally checked the comments on the livestream by slightly looking at their phone, but did not engage (reply or greet) them. P4 maintained their posture (back straight, legs down) uniformly throughout the observation period. P4 also put on music and occasionally sing with the music.</li><li><strong>Summary of applications and/or tabs opened counts:</strong> Notion, various tabs on browser, Spotify</li><li><strong>Average duration of uninterrupted focus:</strong> ~45 minutes.</li><li><strong>Average duration of distracted period:</strong> 7 minutes.</li><li><strong>Average times of being distracted:</strong> 1 time.</li><li><strong>Notable statements from interview:</strong> P4 reported that their main distractions stem from having irrelevant applications or tabs visible on their screen. To mitigate this, they intentionally closed or removed items such as WhatsApp or email from view. They stated that maintaining focus is relatively easy once they enter a flow state, but if that flow is interrupted—for example, by watching a show during a break—they find it difficult or impossible to return to the task. P4 also expressed a preference for a consistent, non-distracting workspace, including a plain environment and minimal noise aside from selected music. Regarding a livestreamed context, P4 noted that they would not necessarily change their workflow for the audience, but they would be more aware of the camera. They described feeling slightly encouraged by the sense of being observed, “as if mom was watching,” which they believed could help them stay on task.</li></ul>`,
+        },
+        'section-4': {
+          title: 'Section 4: Analysis of the Central Question',
+          html: `<p>This study began with the hypothesis, drawn from research in Section 2, that recording and livestreaming one’s work would result in a longer duration of undisrupted focus. However, the experiment presents a more nuanced outcome. While the participant cases suggest that livestreaming has the potential to delay visible distraction, this effect appears highly intertwined with performative pressures and does not necessarily translate into deeper engagement with the task.</p><p>Across participants, the quantitative results reveal a relatively consistent pattern of sustained focus. Three of the four participants (P1, P3, and P4) maintained uninterrupted work periods of approximately 36–45 minutes, with only one brief distraction episode lasting 1–7 minutes. In contrast, P2 displayed markedly different behavior, with six distraction episodes averaging six minutes each. This suggests that, within this small sample, prolonged focus appears to be the norm, and high distraction frequency represents an exception rather than a prevailing trend. The data therefore indicates that livestreaming alone may not uniformly extend or diminish focus duration, but instead interacts with individual tendencies in complex ways.</p><p>In examining the timestamp of distractions, another pattern emerged. For participants imagining a livestreamed context, the first major distraction—defined as a deliberate shift of attention to a mobile device or unrelated application—occurred within the first 15 minutes and was socially driven, such as checking appearance or monitoring audience responses. In contrast, the non-livestreamed group showed far more variability in when distraction first appeared, and their interruptions tended to be functional rather than performative: P3 became distracted after searching for task-related information on Instagram, which then led to unrelated browsing, and P4 temporarily left the workspace to retrieve headphones to help them focus. Although the small sample prevents generalization, this clustering suggests that livestreaming may prompt <em>earlier</em> socially oriented interruptions rather than delaying distraction onset. Meanwhile, non-livestreamed participants experienced distractions for a wider range of reasons, making the timing more unpredictable. This distinction supports the idea that livestreaming shifts distraction toward audience-oriented self-monitoring rather than task-related procrastination.</p><p>While the quantitative results suggest that livestreaming alone does not substantially alter the duration of uninterrupted focus for most participants, they do highlight meaningful differences in <em>how</em> attention is allocated. The relative consistency in focus duration across participants indicates that the presence of a livestream is not a reliable predictor of longer or shorter on-task periods. However, the qualitative observations reveal that livestreaming introduces additional cognitive and social demands that are not captured through duration metrics alone. These elements point toward a shift in the <em>quality</em> and <em>character</em> of attention rather than its length, suggesting that the more significant impact of livestreaming may lie in how it reshapes the experience of focusing, rather than how long that focus is maintained.</p><p>The livestream introduced new forms of attentional disruption, such as monitoring appearance (P2), tidying workflows to appear professional in front of audience perception (P1), or anticipating responses to audience interaction (P3). In several cases, participants expressed that they would spend more time adjusting their presentation or responding to the audience rather than engaging deeply with the task itself. This suggests that livestreaming does not simply increase or decrease distractions, but it may redistribute it from task-irrelevant online behaviors toward performance-oriented self-monitoring.</p>`,
+        },
+        'section-5': {
+          title: 'Section 5: Insights & Discovered Limitations',
+          html: `<p>This study originally focused on a single dependent variable—the duration of focus—and two conditions: livestreamed and non-livestreamed work. However, the nuanced results prompted a reassessment of this framework. Duration alone proved insufficient for evaluating the impact of livestreaming a work in progress, since the findings suggest that livestreaming primarily influences <em>how</em> participants focus rather than <em>how long</em> they do so. Variables not initially considered—such as concern over workspace presentation, awareness of appearance, pressure to work faster, and desire to appear competent—played a significant role in shaping participants’ experiences.</p><p>These observations raise new questions about the relationship between livestreaming and productivity. Does livestreaming genuinely improve the quality of work produced, or does it primarily encourage the <em>performance</em> of productivity? Would incorporating measures such as task accuracy, learning outcomes, or depth of engagement reveal a different pattern? The results also suggest that individual factors, such as task enjoyment or baseline distractibility, may mediate the effectiveness of livestreaming, indicating that personal motivation may be a stronger determinant of focus than the presence of an imagined audience.</p><p>Methodologically, this study highlighted a blind spot in equating visible, uninterrupted focus with productivity. The assumption that longer periods of apparent concentration reflect improved performance overlooks the cognitive effort spent on presentation management and self-monitoring. An important limitation of this experiment is the presence of the researcher during the non-livestreamed condition, meaning participants were never truly unobserved; even without a public audience, the awareness of being watched may have introduced performance-oriented behavior. In addition, the small sample size, differences in task type and task enjoyment, and the imagined livestream scenario make it difficult to isolate livestreaming as the primary factor influencing attention.</p><p>Taken together, these insights suggest that future research would benefit from a more controlled and ecologically valid design, particularly one that accounts for individual differences in task affinity and baseline focus ability, and incorporates metrics that capture the <em>quality</em> of cognitive engagement rather than its visible duration.</p>`,
+        },
+        conclusion: {
+          title: 'Conclusion',
+          html: `<p>This study has shifted my perspective from viewing working on livestream as a simple productivity tool toward understanding it as a complex social and performative practice. While the participant cases suggest that livestreaming can delay visible distraction, the results show that it does not reliably extend sustained focus. Instead, it reshapes attention by introducing pressures that prioritize visibility over substance.</p><p>Returning to the initial inspiration for this project, namely the practice of self-documenting process-heavy work at ITP, I now see a clearer distinction between recording for reflection and broadcasting for an audience. The realtime, public nature of livestreaming appears to trigger social monitoring that may interfere with deeper engagement, whereas private self-recording may preserve motivational benefits without the same performative distractions.</p><p>If documentation is meant to support meaningful engagement with one’s work, stepping back from livestreaming toward private recording and later sharing may offer a more balanced approach. This raises a broader question: how might we design self-documentation practices that foster genuine concentration and reflection without turning productivity into a performance?</p>`,
+        },
+        references: {
+          title: 'References',
+          html: `<ol><li><a href="https://dl.acm.org/doi/pdf/10.1145/1749603.1749606" target="_blank">[1] https://dl.acm.org/doi/pdf/10.1145/1749603.1749606</a></li><li><a href="https://jyskwon.github.io/publications/CHI2021_SWM.pdf?utm_source=chatgpt.com" target="_blank">[2] https://jyskwon.github.io/publications/CHI2021_SWM.pdf?utm_source=chatgpt.com</a></li><li><a href="https://muse.jhu.edu/article/252435/pdf" target="_blank">[3] https://muse.jhu.edu/article/252435/pdf</a></li><li><a href="https://deadroxy.com/publications/Ruberg,%20Brewer,%20Cullen,%20and%20Persaud%20-%20The%20Revolution%20Is%20Streaming%20Live.pdf" target="_blank">https://deadroxy.com/publications/Ruberg,%20Brewer,%20Cullen,%20and%20Persaud%20-%20The%20Revolution%20Is%20Streaming%20Live.pdf</a></li><li><a href="https://www.searchenginejournal.com/google-lists-5-key-trends-shapingconsumer-behavior-amid-covid-19/368874/#clos" target="_blank">[5] Matt Southern. 2020 (accessed September 10, 2020). Google Lists 5 Key Trends Shaping Consumer Behavior Amid COVID-19. https: //www.searchenginejournal.com/google-lists-5-key-trends-shapingconsumer-behavior-amid-covid-19/368874/#clos</a></li><li><a href="https://observatory.tec.mx/edu-news/gongbang-study-with-me/" target="_blank">[6] https://observatory.tec.mx/edu-news/gongbang-study-with-me/</a></li><li><a href="https://researchleap.com/wp-content/uploads/2022/03/01_Casual-Learning-within-TikTok.pdf" target="_blank">https://researchleap.com/wp-content/uploads/2022/03/01_Casual-Learning-within-TikTok.pdf</a></li><li><a href="https://www.physicianleaders.org/articles/how-much-time-and-energy-do-we-waste-toggling-between-applications?utm_source=chatgpt.com" target="_blank">https://www.physicianleaders.org/articles/how-much-time-and-energy-do-we-waste-toggling-between-applications?utm_source=chatgpt.com Important!</a></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9842732/?utm_source=chatgpt.com" target="_blank">https://pmc.ncbi.nlm.nih.gov/articles/PMC9842732/?utm_source=chatgpt.com</a></li></ol>`,
+        },
+      };
+      const sectionKeys = Object.keys(documentContent);
+
+      const contentContainer = document.getElementById('content-container');
+      const controlsContainer = document.getElementById('controls-container');
+      const initialCenterContainer = document.getElementById(
+        'initial-center-container',
+      );
+
+      // Stores the IntersectionObserver instance
+      let observer = null;
+
+      /**
+       * Renders the entire document as a single, scrollable page ("Focus" Mode).
+       */
+      function renderFocus() {
+        let html = '';
+        for (const id in documentContent) {
+          const section = documentContent[id];
+          html += `<div id="${id}">`;
+          html += `<h3>${section.title}</h3>`;
+          html += section.html;
+          html += '</div>';
+        }
+        contentContainer.innerHTML = html;
+      }
+
+      /**
+       * Renders a single section and sets up an observer to open the next one on scroll ("Sequential Unfocus" Mode).
+       * @param {string} currentSectionId - The ID of the section to display.
+       */
+      function renderSequentialUnfocus(currentSectionId) {
+        const sectionIndex = sectionKeys.indexOf(currentSectionId);
+        const isLastSection = sectionIndex === sectionKeys.length - 1;
+        const section = documentContent[currentSectionId];
+
+        // 1. Render the current section
+        let html = `
+                <div id="${currentSectionId}">
+                    <h3>${section.title}</h3>
+                    ${section.html}
+                </div>
+            `;
+
+        // 2. Add the scroll trigger for the next section (if not the last)
+        if (!isLastSection) {
+          const nextSectionId = sectionKeys[sectionIndex + 1];
+          html += `<div id="next-section-trigger" data-next-id="${nextSectionId}">
+                    Scroll down to open <strong>${documentContent[nextSectionId].title}</strong> in a new tab.
+                </div>`;
+        } else {
+          html += `<div id="end-of-document-message">
+                    <h3>End of Document</h3>
+                    <p>You have reached the end of the document in Unfocus mode. You can switch to Focus mode to view all sections together, or close this tab.</p>
+                </div>`;
+        }
+
+        contentContainer.innerHTML = html;
+
+        // 3. Set up the Intersection Observer
+        if (observer) {
+          observer.disconnect(); // Disconnect previous observer if exists
+        }
+
+        if (!isLastSection) {
+          const triggerElement = document.getElementById(
+            'next-section-trigger',
+          );
+
+          // Observer fires when 90% of the trigger element is visible
+          observer = new IntersectionObserver(
+            (entries, obs) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  obs.unobserve(entry.target); // Stop observing immediately
+                  handleNextSectionTrigger(entry.target.dataset.nextId);
+                }
+              });
+            },
+            {
+              root: null, // viewport
+              rootMargin: '0px',
+              threshold: 0.9, // Trigger when 90% of the element is visible
+            },
+          );
+
+          observer.observe(triggerElement);
+        }
+      }
+
+      /**
+       * Handles the logic for opening the next section in a new tab.
+       * @param {string} nextSectionId - The ID of the next section to open.
+       */
+      function handleNextSectionTrigger(nextSectionId) {
+        const currentUrl = window.location.origin + window.location.pathname;
+        // The key fix: The new URL must include both mode=unfocus AND the next section ID.
+        const nextUrl = `${currentUrl}?mode=unfocus&section=${nextSectionId}`;
+
+        const triggerElement = document.getElementById('next-section-trigger');
+        if (triggerElement) {
+          // Visual feedback before opening the tab
+          triggerElement.classList.add('opening');
+          triggerElement.innerHTML = `Opening <strong>${documentContent[nextSectionId].title}</strong> in a new tab...`;
+        }
+
+        // Open the new tab
+        window.open(nextUrl, '_blank');
+
+        // Optional: Visually confirm the tab was opened on the current page
+        setTimeout(() => {
+          if (triggerElement) {
+            triggerElement.innerHTML = `<strong>${documentContent[nextSectionId].title}</strong> is now open in a new tab. You can close this one.`;
+            triggerElement.classList.remove('opening');
+          }
+        }, 1000);
+      }
+
+      /**
+       * Sets the display mode (Focus or Unfocus).
+       * @param {string} mode - 'focus' or 'unfocus'
+       * @param {string} [initialSectionId] - Only used for unfocus mode to specify starting section.
+       */
+      function setMode(mode, initialSectionId = sectionKeys[0]) {
+        // 1. Update the layout for content mode
+        initialCenterContainer.style.flexGrow = '0';
+        initialCenterContainer.style.justifyContent = 'flex-start';
+        initialCenterContainer.style.textAlign = 'left';
+
+        // 2. Make the content container visible
+        contentContainer.style.display = 'block';
+
+        // Find the current section index for display in the controls
+        const sectionIndex = sectionKeys.indexOf(initialSectionId);
+        const sectionLabel =
+          sectionIndex >= 0
+            ? ` (Section ${sectionIndex + 1} of ${sectionKeys.length})`
+            : ''; // Only show count if it's a valid section key
+
+        // 3. Render the content based on mode
+        if (mode === 'focus') {
+          renderFocus();
+          controlsContainer.innerHTML =
+            '<p><strong>Mode: FOCUS (All Sections)</strong> <button onclick="setMode(\'unfocus\')">Switch to UNFOCUS Mode</button></p>';
+          window.scrollTo(0, 0); // Scroll to top for full document view
+        } else if (mode === 'unfocus') {
+          renderSequentialUnfocus(initialSectionId);
+          controlsContainer.innerHTML = `<p><strong>Mode: UNFOCUS${sectionLabel}</strong> <button onclick="setMode('focus')">Switch to FOCUS Mode</button></p>`;
+          window.scrollTo(0, 0); // Always scroll to top for single section view
+        }
+      }
+
+      /**
+       * Initialization Logic: Handles first load, query parameters, and hash deep links.
+       */
+      function initialize() {
+        const params = new URLSearchParams(window.location.search);
+        const hash = window.location.hash.substring(1);
+
+        if (hash) {
+          // Scenario 1: Deep link (e.g., index.html#section-comparison) -> Always load in FOCUS mode and scroll.
+          setMode('focus');
+
+          const targetElement = document.getElementById(hash);
+          if (targetElement) {
+            setTimeout(() => {
+              targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+              });
+            }, 100);
+          }
+
+          controlsContainer.innerHTML =
+            '<p><strong>Mode: FOCUS (Deep Linked)</strong> <button onclick="setMode(\'unfocus\')">Switch to UNFOCUS Mode</button></p>';
+        } else if (params.get('mode') === 'unfocus' && params.get('section')) {
+          // Scenario 2: Sequential Unfocus mode with a specified section (?mode=unfocus&section=...)
+          const targetSection = params.get('section');
+          if (sectionKeys.includes(targetSection)) {
+            setMode('unfocus', targetSection);
+          } else {
+            // Fallback if URL is malformed, start at Introduction
+            setMode('unfocus', sectionKeys[0]);
+          }
+        } else {
+          // Scenario 3: Initial Load (show only title and buttons, centered)
+          controlsContainer.innerHTML =
+            '<button onclick="setMode(\'focus\')">Focus (View Entire Document)</button> <button onclick="setMode(\'unfocus\')">Unfocus (Sequential Sections)</button>';
+
+          contentContainer.style.display = 'none';
+          initialCenterContainer.style.flexGrow = '1';
+        }
+      }
+
+      // Run the initialization function when the page loads
+      document.addEventListener('DOMContentLoaded', initialize);
+    </script>
+  </body>
+</html>
